@@ -11,27 +11,22 @@ class character:
 
 
 class player(character):
-  nickname=None
+  nick_name=None
   lives=None
-  def __init__(self,name,health,magic_points,nickname,lives):
-    self.name=name
-    self.health=health
-    self.magic=magic_points
-    self.nick=nickname
+  def __init__(self,nick_name,lives):
+    self.nick=nick_name
     self.lives=lives
   def isAlive(self):
-    if self.health<50:
-      print(f"{self.name} Is not Alive")
+    if self.lives<50:
+      print(f"{self.nick} Is not Alive")
     else:
-      print(f"{self.name} is alive")
-rick=player("Rick",100,70,"Ricky",5)
-rick.print()
+      print(f"{self.nick} is alive")
+rick=player("Ricky",5)
 rick.isAlive()
 class enemy(character):
   type=None
   strength=None
-  def __init__(self,name,type,strength):
-    self.name=name
+  def __init__(self,type,strength):
     self.type=type
     self.strength=strength
 
